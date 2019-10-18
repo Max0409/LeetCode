@@ -3,4 +3,4 @@ project(untitled2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled2 main.cpp 207.cpp 406.cpp)
+add_executable(untitled2 207.cpp 406.cpp RadixSort.cpp 16.cpp)
