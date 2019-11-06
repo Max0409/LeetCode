@@ -36,17 +36,21 @@ bool canPartition(vector<int>& nums) {
     }
     sum=sum/2;
 
-    sort(nums.begin(),nums.end());
-//    cout<<nums[size-1]<<" ";
-//    cout<<sum;
-    //if(nums[size-1]>sum){return false;}
-    return help(nums,sum,nums.size()-1);
+    vector<bool> res(sum+1,false);
+    res[0]=true;
+    for(int num:nums){
+        for(int i=sum;i>=num;i--){
+            res[i]=res[i]||res[i-num];
+        }
+
+
+    }
+
+
+    return res[sum];
 
 
 
-}
 
-int main(){
-    vector<int> nums={1,2,5};
-    canPartition(nums);
+
 }

@@ -57,10 +57,3 @@ vector<int> spiralOrder(vector<vector<int>>& matrix) {
 }
 
 
-int main(){
-
-    vector<vector<int>> nums={{6,9,7}};
-    spiralOrder(nums);
-
-
-}

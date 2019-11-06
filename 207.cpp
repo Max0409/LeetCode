@@ -1,13 +1,13 @@
 //
 // Created by Max on 2019-10-16.
-//
-
-
 using namespace std;
 
 #include "string"
 #include "iostream"
-#include "vector"
+#include "vector"//
+
+
+
 
 bool wordBreak(string s, vector<string>& wordDict) {
     vector<bool> flags(s.size()+1,false);
@@ -32,9 +32,3 @@ bool wordBreak(string s, vector<string>& wordDict) {
 
 
 
-int main(){
-    vector<string> strs={"leet","code"};
-    wordBreak("leetcode",strs);
-
-
-}

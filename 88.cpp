@@ -48,15 +48,3 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
 }
 
 
-
-int main(){
-    vector<int> nums1={2,0};
-    vector<int> nums2={1};
-    merge(nums1,1,nums2,1);
-    for(int n:nums1){
-        cout<<n<<" ";
-
-    }
-
-
-}

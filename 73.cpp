@@ -52,11 +52,11 @@ void setZeroes(vector<vector<int>>& matrix) {
 }
 
 
-int main(){
-    vector<vector<int>> nums={{1,1,1},{1,0,1},{1,1,1}};
-    cout<<nums.size();
-
-    setZeroes(nums);
-
-
-}
+//int main(){
+//    vector<vector<int>> nums={{1,1,1},{1,0,1},{1,1,1}};
+//    cout<<nums.size();
+//
+//    setZeroes(nums);
+//
+//
+//}
