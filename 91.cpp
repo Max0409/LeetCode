@@ -9,36 +9,72 @@ using namespace std;
 #include "iostream"
 #include <vector>
 
-int help(string s,int loc){
-    if(loc==s.size()-1&&s[loc]=='0'){
-        return 0;
-    }
-    if(loc>=s.size()){
-        return 1;
-    }
-    if(loc==s.size()-1){
-        return 1;
-    }
 
-
-    if(s[loc]>'0'||(s[loc]='2'&&s[loc+1]<='6')){
-        return help(s,loc+1)+help(s,loc+2);
-
-    }else{
-        return help(s,loc+1);
-
-    }
-
-}
 int numDecodings(string s) {
-    if(s.find("0")!=string::npos){
 
-        return 0;
+
+    if(s[0]=='0') return 0;
+
+    int last2=1;
+    int last1=1;
+
+
+
+
+
+    for(int i=1;i<s.size();i++){
+        if(s[i]=='0'){
+
+            if(s[i-1]=='1'||s[i-1]=='2'){
+               int now=last2;
+               last2=last1;
+               last1=now;
+                continue;
+
+
+
+            }else{
+                return 0;
+
+            }
+
+        }
+
+        if(s[i-1]=='1'&&s[i]>='1'&&s[i]<='9'){
+            int now=last1+last2;
+            last2=last1;
+            last1=now;
+            continue;
+
+
+        }
+
+        if(s[i-1]=='2'&&s[i]>='1'&&s[i]<='6'){
+            int now=last1+last2;
+            last2=last1;
+            last1=now;
+            continue;
+
+        }
+
+        int now=last1;
+        last2=last1;
+        last1=now;
+
     }
 
-    return help(s,0);
+
+
+
+    return last1;
+
 
 
 
 }
 
+
+int main(){
+    cout<<numDecodings("226");
+
+}
