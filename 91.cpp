@@ -74,7 +74,3 @@ int numDecodings(string s) {
 }
 
 
-int main(){
-    cout<<numDecodings("226");
-
-}

@@ -9,23 +9,11 @@ using  namespace std;
 #include "iostream"
 #include "vector"
 
-bool wordBreak(string s, vector<string>& wordDict) {
-    vector<bool> flags(s.size()+1,false);
-    flags[0]=true;
+vector<vector<string>> partition(string s) {
 
-    for(int i=1;i<=s.size();i++){
-        for(int j=0;j<i;j++){
-            if(flags[j]&&find(wordDict.begin(),wordDict.end(),s.substr(j,i-j))!=wordDict.end()){
-                flags[i]=true;
-                break;
+    for(char c:s){
 
-
-            }
-        }
     }
-
-    return flags[s.size()];
 
 
 }
-
