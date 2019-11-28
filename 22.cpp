@@ -3,56 +3,37 @@
 //
 using namespace std;
 
+#include <vector>
+#include <string>
 #include <unordered_map>
-class Node {
-public:
-    int val;
-    Node* next;
-    Node* random;
 
-    Node() {}
 
-    Node(int _val, Node* _next, Node* _random) {
-        val = _val;
-        next = _next;
-        random = _random;
+void help(string temp,int left_n,int right_n,vector<string>& re){
+    if(left_n==0&&right_n==0){
+        re.push_back(temp);
+        return;
     }
-};
 
-Node* copyRandomList(Node* head){
-    if(head== nullptr){
-        return head;
-    }
-    unordered_map<Node*,Node*> nodes;
-    Node* pre;
-    Node* pre1=pre;
-    Node* head1=head;
 
-    while (head){
-        Node* node=new Node();
-        node->val=head->val;
-        nodes[head]=node;
+    if(left_n>0){
 
-        head=head->next;
+        help(temp+'(',left_n--,right_n++,re);
 
     }
 
-    head=head1;
+    if(right_n>0){
+        help(temp+')',left_n,right_n--,re);
 
-while(head){
-    nodes[head]->next=nodes[head->next];
-    nodes[head]->random=nodes[head->random];
-    head=head->next;
-
-
+    }
 
 }
-
-
-    return nodes[head1];
+vector<string> generateParenthesis(int n) {
 
 
 
+    vector<string> re;
+    help("",n,0,re);
+    return re;
 
 
 }
