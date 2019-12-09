@@ -75,15 +75,15 @@ void gameOfLife(vector<vector<int>>& board) {
 
 }
 
-
-int main(){
-    vector<vector<int>> re={{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
-    gameOfLife(re);
-    for(vector<int> ve:re){
-        for(int x:ve){
-            cout<<x<<" ";
-
-        }
-    }
-
-}
+//
+//int main(){
+//    vector<vector<int>> re={{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
+//    gameOfLife(re);
+//    for(vector<int> ve:re){
+//        for(int x:ve){
+//            cout<<x<<" ";
+//
+//        }
+//    }
+//
+//}
