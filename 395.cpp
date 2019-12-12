@@ -10,46 +10,51 @@ using namespace std;
 #include <vector>
 #include <iostream>
 
-int longestSubstring(string s, int k) {
-    map<char,int> count;
-
-    for(int i=0;i<s.size();i++){
-        count[s[i]]++;
+int help(string s, int k,int start,int end){
+    if((end-start+1<k)){
+        return 0;
 
     }
+    vector<int> count(26,0);
 
 
-    vector<int> locs;
+    for(int i=start;i<=end;i++){
+        count[s[i]-'a']++;
 
+    }
+    int loc=-1;
 
-    for(int i=0;i<s.size();i++){
-        if(count[s[i]]<k){
-            cout<<i<<" ";
-
-            locs.push_back(i);
+    for(int i=start;i<=end;i++){
+        if(count[s[i]-'a']<k){
+            loc=i;
+            break;
 
 
         }
     }
 
-    if(locs.empty()){
-        return s.size();
+    if(loc==-1){
+        return (end-start+1);
 
     }
-    int length=locs[0];
-
-    for(int i=1;i<locs.size();i++){
-        length=max(length,locs[i]-locs[i-1]-1);
-
-    }
-
-
-    return length;
+    return max(help(s,k,start,loc-1),help(s,k,loc+1,end));
 
 
 }
 
-//int main(){
-//    cout<<longestSubstring("ababacb",3);
-//
-//}
+int longestSubstring(string s, int k) {
+
+
+    return help(s,k,0,s.size());
+
+
+
+
+
+
+}
+
+int main(){
+    cout<<longestSubstring("aaabb",3);
+
+}
