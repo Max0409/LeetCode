@@ -8,34 +8,28 @@ using namespace std;
 
 
 
-int trap(vector<int>& height) {
-    vector<int> leftMax(0,height.size());
-    vector<int> rightMax(0,height.size());
-
-
-
-
-    for(int i=1;i<height.size();i++){
-        leftMax[i]=max(leftMax[i-1],height[i-1]);
-
-    }
-
-    for(int i=height.size()-2;i>=0;i--){
-        rightMax[i]=max(rightMax[i+1],height[i+1]);
-
-    }
-
-    int re=0;
-    for(int i=0;i<height.size();i++){
-        int temp=min(leftMax[i],rightMax[i])-height[i];
-        if(temp>0){
-            re+=temp;
+string multiply(string num1, string num2) {
+    int n1=num1.size();
+    int n2=num2.size();
+    string res(n1+n2,'0');
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n2;j++){
+            int temp=(res[i+j-1]-'0')+(num1[n1]-'0')*(num2[n2]-'0');
+            res[i+j+1]=temp%10+'0';
+            res[i+j]+=temp/10;
 
         }
-
     }
 
-    return re;
+
+    for(int i=0;i<n1+n2;i++){
+        if(res[i]!='0'){
+            return res.substr(i);
+
+        }
+    }
+
+    return "0";
 
 
 }

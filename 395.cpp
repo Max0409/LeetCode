@@ -53,8 +53,8 @@ int longestSubstring(string s, int k) {
 
 
 }
-
-int main(){
-    cout<<longestSubstring("aaabb",3);
-
-}
+//
+////int main(){
+//    cout<<longestSubstring("aaabb",3);
+//
+//}

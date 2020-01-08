@@ -20,7 +20,7 @@ string fractionToDecimal(int numerator, int denominator) {
 
     den=abs(denominator);
 
-    num=abs(num);
+   // num=abs(num);
 //    den=abs(den);
 
     res+=to_string(num/den);

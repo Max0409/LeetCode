@@ -60,7 +60,3 @@ int numIslands(vector<vector<char>>& grid) {
 }
 
 
-int main(){
-
-
-}

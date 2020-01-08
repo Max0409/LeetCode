@@ -88,10 +88,4 @@ void solve(vector<vector<char>>& board) {
 
 
 
-int main(){
-    //vector<vector<char >> chars={{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
-    vector<vector<char >> chars={{'O','O'},{'O','O'}};
-    solve(chars);
-
-}
 
